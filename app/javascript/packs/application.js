@@ -13,6 +13,33 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
+//= require rails-ujs
 //= require jquery
-//= require semantic-ui/
+//= require jquery2
+//= require activestorage
+//= require turbolinks
+//= require semantic-ui
+//= require_tree
+
+$(document).on('turbolinks:load', function() {
+	$('.ui.dropdown').dropdown();
+})
+
+
+$(document).on('turbolinks:load', function() {
+$('.ui.dropdown')
+  .dropdown({
+    values: [
+      {
+        name: 'Male',
+        value: 'male'
+      },
+      {
+        name     : 'Female',
+        value    : 'female',
+        selected : true
+      }
+    ]
+  })
+;
+})
