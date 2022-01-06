@@ -1,7 +1,9 @@
 <a class="active item">
-  ChatROOM
+  <%= link_to 'ChatROOM',  root_path %>
+  
 </a>
 <a class="item">
+
   Messages
 </a>
 <div class="right menu">
@@ -11,8 +13,9 @@
       Account
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">log out</a>
-      <a class="dropdown-item" href="#">log in</a>
+      <a class="dropdown-item"><%= link_to 'ChatROOM',  root_path %></a>
+        
+      <a class="dropdown-item"><%= link_to 'Log in',  login_path %></a>
       <a class="dropdown-item" href="#">Sign up here</a>
     </div>
   </div>
