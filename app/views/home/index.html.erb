@@ -18,32 +18,36 @@
 	<div class="ui fluid raised card chatbox">
   		<div class="content">
 			<div class="ui feed">
+
+
 			  
+<!-- 															create => _message.html.erb and moved there down part. 
+	but it will work only if  |
+			 										 \ /  there instead |some| will be  |message| - by naming convettion rule 
+		 <% @messages.each do |some| %>
+						  <div class="event">
+						    <div class="content">
+						      <div class="summary">
+						      	<div class="ui two column grid">
 
-			  <% @messages.each do |some| %>
-				  <div class="event">
-				    <div class="content">
-				      <div class="summary">
-				      	<div class="ui two column grid">
-
-				      	<div class="four wide column">
-				     				<i> the <%= some.user.username %>  said :</i>
-				     			</div>
-				      		<div class="six wide column">
-				     					<%= some.body %> 
-	 								</div>
-
-
-	 							</div>
-
-
-	 							<p></p>
-				      </div>
-				    </div>
-				  </div>
-				<% end %>	
+						      	<div class="four wide column">
+						     				<i> the <%= some.user.username %>  said :</i>
+						     			</div>
+						      		<div class="six wide column">
+						     					<%= some.body %> 
+			 								</div>
 
 
+			 							</div>
+
+
+			 							<p></p>
+						      </div>
+						    </div>
+						  </div>
+						<% end %>	 -->
+
+		 		<%= render @messages %>
 
 			</div>
 		</div>
