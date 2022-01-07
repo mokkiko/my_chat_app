@@ -13,3 +13,10 @@ User.create(username: "Lu", password: "password")
 User.create(username: "Felix", password: "password")
 User.create(username: "Agnia", password: "password")
 User.create(username: "Tai", password: "password")
+
+
+Message.create(body: "1", user: User.first)
+Message.create(body: "2", user: User.last)
+Message.create(body: "3", user: User.second)
+Message.create(body: "wazzup", user: User.last)
+Message.create(body: "talk to eminem", user: User.last)
