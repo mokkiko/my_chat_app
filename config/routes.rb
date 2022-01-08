@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/create'
   root 'home#index'
   get 'home/index'
   
