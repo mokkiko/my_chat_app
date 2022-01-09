@@ -5,6 +5,9 @@ before_action :require_user
 def create
   message = current_user.messages.build(message_params)
  	if message.save
+    ActionCable.server.broadcast "chatroom_channel", 
+                                  body: message.body
+
     redirect_to root_path
   end
 end
