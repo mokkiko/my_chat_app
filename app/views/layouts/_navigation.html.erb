@@ -1,11 +1,14 @@
-<a class="active item">
-  <%= link_to 'ChatROOM', root_path, class: "item"  %>
-  
-</a>
-<a class="item">
+<a class="item"> <%= link_to 'ChatROOM', root_path, class: "item"  %></a>
 
-  Messages
-</a>
+<a class="item">Messages</a>
+
+<% if logged_in? %>
+  <a class="active item">
+      _____________ 
+      <%= User.find(session[:user_id]).username %>
+  </a>
+<% end %>
+
 <div class="right menu">
   <div class="dropdown">
 
@@ -13,14 +16,23 @@
       Account
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item"><%= link_to 'ChatROOM',  root_path, class: "dropdown-item" %></a>
-        
-      <a class="dropdown-item"><%= link_to 'Log in',  login_path, class: "dropdown-item" %></a>
+      <a class="dropdown-item"><%= link_to 'ChatROOM', root_path, class: "dropdown-item" %></a>
+
+        <% if logged_in? %>
+          <a class="dropdown-item"><%= link_to 'Log out',  logout_path, method: :delete, class: "dropdown-item" %></a>
+        <% else %>
+          <a class="dropdown-item"><%= link_to 'Log in',  login_path, class: "dropdown-item" %></a>        
+        <% end %>
+
+
       <a class="dropdown-item" href="#">Sign up here</a>
     </div>
   </div>
-  <div class="item">
-      <div class="ui primary button">Sign Up</div>
+
+<div class="item">
+    <% if logged_in? %>
+       <div class="ui primary button">Sign Up</div>
+    <% end %>     
   </div>
     <div class="ui dropdown item">
       Language <i class="dropdown icon"></i>
