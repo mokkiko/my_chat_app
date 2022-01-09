@@ -3,7 +3,17 @@ class HomeController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.all
+
+
+
+
+    # garb all messages from DataBase....  it my take a lot of memmory, taht`s why we use scope and add soe code for model(message)
+    # @messages = Message.all
+
+
+    @messages = Message.custom_display
+
+
   end
 
   def login
